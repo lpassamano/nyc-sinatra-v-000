@@ -16,7 +16,7 @@ class FiguresController < ApplicationController
     figure.titles << Title.create(params[:title]) unless params[:title][:name] == ""
     figure.landmarks << Landmark.create(params[:landmark]) unless params[:landmark][:name] == ""
 
-    figure.save
+    #figure.save
     redirect "/figures/#{figure.id}"
   end
 
@@ -33,7 +33,14 @@ class FiguresController < ApplicationController
   end
 
   patch '/figures/:id' do
+    figure = Figure.find(params[:id])
+    figure.update(params[:figure])
 
+    figure.titles << Title.create(params[:title]) unless params[:title][:name] == ""
+    figure.landmarks << Landmark.create(params[:landmark]) unless params[:landmark][:name] == ""
+
+    figure.save
+    redirect "/figures/#{figure.id}"
   end
 
 end

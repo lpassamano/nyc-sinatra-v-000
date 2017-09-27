@@ -1,7 +1,7 @@
-<h2>Edit Figure</h2>
+<h2>Edit <%= @figure.name %></h2>
 
 <form method="POST" action="/figures/<%= @figure.id %>">
-  <input id="hidden" type="hidden" name="_method" value="patch"
+  <input id="hidden" type="hidden" name="_method" value="patch" />
 
   <input name="figure[name]" id="figure_name" type="text" value="<%= @figure.name %>"/>
 
@@ -30,5 +30,5 @@
   <input type="text" name="landmark[name]" id="new_landmark" placeholder="New Landmark Name" /><br />
   <!--<input type="text" name="landmark[year_completed]" placeholder="Year Landmark Completed" />-->
 
-  <button type="submit">Create New Figure</button>
+  <button type="submit">Edit Figure</button>
 </form>
