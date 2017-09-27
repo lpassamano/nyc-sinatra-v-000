@@ -7,17 +7,5 @@
 
   <input name="landmark[year_completed]" id="year_completed" type="text" value="<%= @landmark.year_completed %>"/>
 
-  <p>
-    Please select one figure associated with the landmark:
-  </p>
-  <% @figures.each do |figure| %>
-    <input type="checkbox" name="figure_id" id="figure_<%= figure.id %>" value="<%= figure.id %>"<%= 'checked' if @landmark.figure == figure %>><%= figure.name %></input><br />
-  <% end %>
-
-  <p>
-    or create a new figure:
-  </p>
-  <input type="text" name="figure" id="new_figure" placeholder="New Figure" /><br />
-
   <button type="submit">Edit Landmark</button>
 </form>

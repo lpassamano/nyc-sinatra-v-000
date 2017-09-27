@@ -5,17 +5,5 @@
 
   <input name="landmark[year_completed]" id="landmark_year_completed" type="text" placeholder="Year Completed"/>
 
-  <p>
-    Please select one figure associated with the landmark:
-  </p>
-  <% @figures.each do |figure| %>
-    <input type="checkbox" name="landmark[figure_id]" id="figure_<%= figure.id %>" value="<%= figure.id %>"><%= figure.name %></input><br />
-  <% end %>
-
-  <p>
-    or create a new figure:
-  </p>
-  <input type="text" name="figure[name]" id="new_figure" placeholder="New Figure" /><br />
-
   <button type="submit">Create New Landmark</button>
 </form>
